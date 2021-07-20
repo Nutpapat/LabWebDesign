@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-
+	J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+	crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-
+	Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-
+	wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+	crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="insert_data.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		<h2>Add user</h2>
+
+		<div class="form-group">
+			<label>First name</label>
+			<input type="text" class="form-control" id="firstnameInput" placeholder="Enter first name">
+		</div>
+		<div class="form-group">
+			<label>Last name</label>
+			<input type="text" class="form-control" id="lastnameInput" placeholder="Enter last name">
+		</div>
+		<div class="form-group">
+			<label>Phone</label>
+			<input type="text" class="form-control" id="phoneInput" placeholder="Enter phone number">
+		</div>
+		<div class="form-group">
+			<label>User ID</label>
+			<input type="text" class="form-control" id="useridInput" placeholder="Enter user ID">
+		</div>
+		<button type="submit" class="btn btn-primary" onclick="submitOnclick()">Submit</button>
+	</div>
+	
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDXv0hJhceGGz1U7idGXzJi76nn2GqkCfI",
+    authDomain: "test-web-design-c5dcc.firebaseapp.com",
+    databaseURL: "https://test-web-design-c5dcc.firebaseio.com",
+    projectId: "test-web-design-c5dcc",
+    storageBucket: "test-web-design-c5dcc.appspot.com",
+    messagingSenderId: "662703172766",
+    appId: "1:662703172766:web:6abc627dda8b5343d45f8f",
+    measurementId: "G-KWFNR1NJ6C"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+</html>
