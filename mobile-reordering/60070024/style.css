@@ -1,0 +1,113 @@
+/* Some CSS Setup - nothing to do with flexbox */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-image: linear-gradient(260deg, #1b262c 0%, #0f4c75 100%);
+}
+
+a {
+  color:white;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-decoration: none;
+  background:rgba(0,0,0,0.2);
+  padding:20px 5px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  transition:all 0.5s;
+}
+
+a:hover {
+  background:rgba(0,0,0,0.3);
+}
+
+.toggleNav {
+  display: none;
+}
+
+img {
+  width:100%;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+input {
+  padding:10px;
+  border:0;
+}
+
+
+section, footer {
+  text-align: center;
+  background:rgba(0,0,0,0.2);
+  padding:20px;
+  margin:20px 0;
+  color:white;
+  font-weight: 100;
+}
+
+/* Flex Container */
+.container ul {
+  border: 1px solid black;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.row{
+  border: 1px solid black;
+  padding: 0px;
+}
+
+.col, .col-12{
+  padding: 0px !important;
+}
+
+.container{
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+@media all and (max-width:1000px) {
+
+}
+
+
+@media all and (max-width:500px) {
+  .container ul.open{
+    display: flex;
+  }
+
+  .toggleNav{
+    display: block;
+  }
+
+  .container ul{
+    display: none;
+  }
+
+  .container{
+    order: -1;
+  }
+
+  .hero{
+    order: 1;
+  }
+
+  footer{
+    order: 2;
+  }
+}

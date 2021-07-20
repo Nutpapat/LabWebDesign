@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlexBox Nav</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+  
+  <div class="wrapper">
+    
+    <header class="top">
+      <h1><a href="#">What The Flexbox?!</a></h1>
+    </header>
+
+    <nav class="container">
+      <a href="#" class="toggleNav">☰ Menu</a>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg"><a href="#">Item 01</a></div>
+        <div class="col-12 col-sm-6 col-lg"><a href="#">Item 02</a></div>
+        <div class="col-12 col-sm-6 col-lg"><a href="#">Item 03</a></div>
+        <div class="col-12 col-sm-6 col-lg"><a href="#">Item 04</a></div>
+        <div class="col-12 col-sm-6 col-lg"><a href="#">Item 05</a></div>
+        <div class="col-12 col-sm-6 col-lg"><a href="#">Item 06</a></div>
+        <div class="social">
+          <a href="http://twitter.com"><i class="fa fa-twitter"></i></a>
+        </div>
+        <div class="social">
+          <a href="http://facebook.com"><i class="fa fa-facebook"></i></a>
+        </div>
+        <div class="social">
+          <a href="http://github.com"><i class="fa fa-github"></i></a>
+        </div>
+        <div class="social">
+          <a href="http://instagram.com"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <img src="http://lorempixel.com/1000/600/abstract">
+    </section>
+
+    <section class="details">
+      <p>The Flexbox Layout module aims at providing a more efficient way to lay out, 
+        align and distribute space among items in a container, even when their size is unknown and/or 
+        dynamic.</p>
+    </section>
+
+    <footer>
+      <p>06016346 Web Design and Development</p>
+    </footer>
+
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+    
+    $(function() {
+      $('.toggleNav').on('click',function() {
+        $('.flex-nav ul').toggleClass('open');
+      });
+    });
+
+  </script>
+</body>
+</html>
