@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Number Summation</title>
+</head>
+<body>
+	<form name="mainForm">
+		<fieldset style="width: 50%">
+		<!-- legend -->
+		<legend>Numbers summation</legend>
+		<label for="inputX">Input number x:</label>
+		<input id="inputX" type="text" name="textBox1" /><br/>
+		<label for="inputY">Input number y:</label>
+		<input id="inputY" type="text" name="textBox2" /><br/>	
+		<label for="outputXY">x+y:</label>
+		<input id="outputXY" type="text" name="textBoxSum" readonly="readonly"/>
+		<input type="button" value="Calculate!" onclick="javascript: calcSum()" />			
+		</fieldset>
+		
+	</form>
+	<script type="text/javascript" src="myjs.js"></script>
+</body>
+</html>
