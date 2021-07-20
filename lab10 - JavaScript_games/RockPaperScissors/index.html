@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            width: 90%
+        }
+
+        table,
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1F618D;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid flex-column d-flex align-items-center">
+        <h1 class="py-3">Rock Paper Scissors</h1>
+        <table>
+            <th colspan="3"> Game #1 </th>
+            <tr>
+                <td>User</td>
+                <td></td>
+                <td>Computer</td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="user" id="user_rockImg" src="images/rock.png" alt="urock" width="100px"
+                        onclick="selectedShape(this)">
+                    <img class="user" id="user_paperImg" src="images/paper.png" alt="upaper" width="100px"
+                        onclick="selectedShape(this)">
+                    <img class="user" id="user_scissorsImg" src="images/scissors.png" alt="uscissors" width="120px"
+                        onclick="selectedShape(this)">
+                </td>
+                <td id='stage'></td>
+                <td><img class="comp" id="comp_rockImg" src="images/rock.png" alt="crock" width="100px">
+                    <img class="comp" id="comp_paperImg" src="images/paper.png" alt="cpaper" width="100px">
+                    <img class="comp" id="comp_scissorsImg" src="images/scissors.png" alt="cscissors" width="120px">
+                </td>
+            </tr>
+            <tr>
+                <td id='userScoreText'>#Game win: 0</td>
+                <td></td>
+                <td id='compScoreText'>#Game win: 0</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button class="btn btn-danger" id='startButton' onclick="startGame()" disabled=true>Start</button>
+                    <button class="btn btn-warning" id='resetButton' onclick="resetGame()" disabled=true>Reset</button>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <!-- import external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
