@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>RealtimeChat60070024</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Mitr&display=swap");
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+            text-align: center;
+        }
+
+        input{
+            width: 20%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+        }
+        .error-container{
+            background-color: white;
+            padding: 20px;
+        }
+        button{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script>
+        var socket = io();
+        function setUsername() {
+            socket.emit('setUsername', document.getElementById('name').value);
+        };
+        var user;
+        socket.on('userExists', function (data) {
+            document.getElementById('error-container').innerHTML = data;
+        });
+        socket.on('userSet', function (data) {
+            user = data.username;
+            document.body.innerHTML = '<h1 class"text">ChatRoom</h1><input id="message" type="text" name="name" value="" placeholder="ข้อความ">\
+        <button type="button"  class="btn btn-info" name="button" onclick="sendMessage()">Send</button>\
+        <div id="message-container"></div>';
+        });
+
+        function sendMessage() {
+            var msg = document.getElementById('message').value;
+            if (msg) {
+                socket.emit('msg', { message: msg, user: user });
+            }
+        }
+        socket.on('newmsg', function (data) {
+            if (user) {
+                document.getElementById('message-container').innerHTML += '<div><b> User ' + data.user + '</b>:   ' + data.message + '</div>'
+            }
+        });
+    </script>
+    <h1 class="text">RealtimeChat</h1>
+    <div id="error-container">
+        <input id="name" type="text" name="name" value="" placeholder="Your name">
+        <button type="button" class="btn btn-info" name="button" onclick="setUsername()">Send</button>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table {  
+            width: 90%
+        }
+        table, th, td {           
+            padding: 10px;
+            text-align:  center;            
+        }
+        h1 {
+            text-align: center;
+            color: #1F618D;
+        }
+
+
+        #winword {
+            font-size: 50px;
+            width: 20%;
+            text-align: center;
+            position: absolute;
+            left: 34%;
+            top: 20%;
+            opacity: 0;
+        }
+
+        #loseword {
+            font-size: 50px;
+            width: 20%;
+            text-align: center;
+            position: absolute;
+            left: 36%;
+            top: 22%;
+            opacity: 0;
+        }
+
+        #bung {
+             width: 100%;
+            height: 50%; 
+            position: absolute;
+            visibility: hidden;
+            left: 0;
+            top: 0%; 
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <table>
+        <th colspan="3"> Game #1 </th>
+        <tr>
+            <td>User</td>
+            <td></td>
+            <td>Computer</td>
+        </tr>
+        <tr>
+            <td id="userstage">
+                <img id="user_rockImg" src="images/rock.png" alt="urock" width="100px" onclick="selectedShape(this.id)">
+                <img id="user_paperImg" src="images/paper.png" alt="upaper" width="100px"
+                    onclick="selectedShape(this.id)">
+                <img id="user_scissorsImg" src="images/scissors.png" alt="uscissors" width="120px"
+                    onclick="selectedShape(this.id)">
+            </td>
+            <td id='stage'></td>
+            <td><img id="comp_rockImg" src="images/rock.png" alt="crock" width="100px">
+                <img id="comp_paperImg" src="images/paper.png" alt="cpaper" width="100px">
+                <img id="comp_scissorsImg" src="images/scissors.png" alt="cscissors" width="120px"></td>
+        </tr>
+        <tr>
+            <td id='userScore'>#Game win: 0</td>
+            <td></td>
+            <td id='compScore'>#Game win: 0</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button id='startButton' onclick="startGame()" disabled=true>Start</button>
+                <button id='resetButton' onclick="resetGame()" disabled=true>Reset</button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <div id="winword">Congratulation, You WIN!!!</div>
+    <div id="loseword">Sorry, You Lose.</div>
+    <div id="bung"></div>
+    <!-- import external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
